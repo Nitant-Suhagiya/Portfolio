@@ -2,6 +2,9 @@
   const root = document.documentElement;
   const toggle = document.getElementById("theme-toggle");
   const year = document.getElementById("year");
+  const navToggle = document.getElementById("nav-toggle");
+  const nav = document.getElementById("primary-nav");
+  const backdrop = document.getElementById("nav-backdrop");
 
   const sectionIds = [
     "experience",
@@ -21,9 +24,45 @@
     localStorage.setItem("theme", next);
   });
 
+  function setNavOpen(open) {
+    if (!nav || !navToggle) return;
+    const mobile = window.matchMedia("(max-width: 900px)").matches;
+    document.body.classList.toggle("nav-open", open);
+    nav.classList.toggle("is-open", open);
+    if (mobile) nav.toggleAttribute("inert", !open);
+    else nav.removeAttribute("inert");
+    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    if (backdrop) backdrop.hidden = !open;
+  }
+
+  // Start collapsed for assistive tech on small screens
+  if (window.matchMedia("(max-width: 900px)").matches) {
+    nav?.setAttribute("inert", "");
+  }
+
+  navToggle?.addEventListener("click", () => {
+    setNavOpen(!document.body.classList.contains("nav-open"));
+  });
+
+  backdrop?.addEventListener("click", () => setNavOpen(false));
+
+  for (const link of headerLinks) {
+    link.addEventListener("click", () => setNavOpen(false));
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setNavOpen(false);
+  });
+
+  window.matchMedia("(min-width: 901px)").addEventListener("change", (e) => {
+    if (e.matches) setNavOpen(false);
+  });
+
   function setActive(id) {
     for (const link of headerLinks) {
-      const on = link.getAttribute("href") === `#${id}`;
+      const href = link.getAttribute("href") || "";
+      const on = href === `#${id}` || href.endsWith(`#${id}`);
       link.classList.toggle("active", on);
       link.classList.toggle("is-active", on);
       if (on) link.setAttribute("aria-current", "location");

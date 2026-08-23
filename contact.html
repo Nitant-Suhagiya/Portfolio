@@ -32,7 +32,7 @@
         <span class="logo-text">NS</span>
       </a>
 
-      <nav class="nav-links" aria-label="Primary">
+      <nav class="nav-links" id="primary-nav" aria-label="Primary">
         <a class="nav-link" href="index.html#experience">Experience</a>
         <a class="nav-link" href="index.html#projects">Projects</a>
         <a class="nav-link" href="index.html#research">Research</a>
@@ -47,6 +47,16 @@
       <div class="nav-actions">
         <button
           type="button"
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Open menu"
+        >
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+        </button>
+        <button
+          type="button"
           class="theme-toggle"
           id="theme-toggle"
           aria-label="Switch theme"
@@ -55,6 +65,7 @@
         </button>
       </div>
     </header>
+    <div class="nav-backdrop" id="nav-backdrop" hidden></div>
 
     <div class="page-container">
       <main id="main" class="page-main page-main--contact" tabindex="-1">
