@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Personal portfolio — experience, projects, research, and education."
+    />
+    <title>Nitant Suhagiya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      // Avoid flash: apply theme before paint (mirrors personal-site pattern).
+      (() => {
+        const stored = localStorage.getItem("theme");
+        const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.theme =
+          stored || (dark ? "dark" : "light");
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="site-logo" href="#top" aria-label="Nitant Suhagiya — home">
+        <span class="logo-text">NS</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#research">Research</a>
+        <a class="nav-link" href="#education">Education</a>
+        <a class="nav-link" href="#certificates">Certificates</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button
+          type="button"
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Switch theme"
+        >
+          <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="page-container">
+      <main id="main" class="page-main page-main--hero" tabindex="-1">
+        <!-- Backbone: hero from mldangelo/personal-site -->
+        <section class="hero" id="top">
+          <div class="hero-grid">
+            <div class="hero-primary">
+              <h1 class="hero-title">
+                <span class="hero-name">Nitant Suhagiya</span>
+              </h1>
+              <p class="hero-tagline">
+                I'm a Computer Science student focused on
+                <a href="#" class="hero-highlight">AI/ML</a> and
+                <a href="#" class="hero-highlight">Building cool things</a>.
+              </p>
+              <div class="hero-cta">
+                <a
+                  href="Nitant_Suhagiya_CV.pdf"
+                  class="button"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >CV</a
+                >
+                <a
+                  href="Nitant_Suhagiya_Resume.pdf"
+                  class="button"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Resume</a
+                >
+                <a href="contact.html" class="button">Contact</a>
+              </div>
+            </div>
+            <div class="hero-portrait">
+              <img
+                src="Profile.jpg"
+                alt="Portrait of Nitant Suhagiya"
+                width="320"
+                height="320"
+              />
+            </div>
+          </div>
+          <p class="hero-about">
+            I’m a 3rd year Computer Science student at Toronto Metropolitan University
+            with a minor in Mathematics. I currently work as a Data Engineer
+            Intern at the Canadian Nuclear Safety Commission and as a Senior
+            Research Assistant in TMU’s CMIC Lab. My research includes UM-GCN, a
+            graph network for chest X-ray classification submitted to SPIE
+            Medical Imaging 2027. Outside the lab I build tools like Pagenova, a
+            Chrome AI assistant, and an F1 race-prediction pipeline with
+            XGBoost.
+          </p>
+          <div class="hero-bg" aria-hidden="true"></div>
+        </section>
+
+        <div class="resume-content">
+          <section id="experience" class="resume-section" aria-labelledby="exp-heading">
+            <div class="section-title">
+              <h2 id="exp-heading">Experience</h2>
+            </div>
+            <div class="experience-spine">
+              <article class="jobs-container jobs-container--lead jobs-container--current">
+                <span class="job-marker" aria-hidden="true"></span>
+                <p class="daterange">
+                  <time datetime="2026-05">May 2026</time>
+                  <span class="daterange-sep" aria-hidden="true">—</span>
+                  <span class="sr-only"> to </span>
+                  <span class="daterange-present">Present</span>
+                </p>
+                <div class="job-body">
+                  <header>
+                    <h3>
+                      <a
+                        class="job-company"
+                        href="https://www.cnsc-ccsn.gc.ca/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Canadian Nuclear Safety Commission (CNSC)</a
+                      >
+                      <span class="job-position"
+                        >Data Engineer Intern · Ottawa, ON</span
+                      >
+                    </h3>
+                  </header>
+                  <ul class="points">
+                    <li>
+                      Engineered a Python automation pipeline that translates
+                      and validates data inputs for reactor simulation software,
+                      reducing manual data preparation time by 70% and
+                      eliminating transcription errors across critical safety
+                      workflows.
+                    </li>
+                    <li>
+                      Processed and mapped 10,000+ structured records per run,
+                      enabling consistent, audit-ready data handoffs in a
+                      classified, federally regulated nuclear safety
+                      environment.
+                    </li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="jobs-container jobs-container--current">
+                <span class="job-marker" aria-hidden="true"></span>
+                <p class="daterange">
+                  <time datetime="2025-10">Oct 2025</time>
+                  <span class="daterange-sep" aria-hidden="true">—</span>
+                  <span class="sr-only"> to </span>
+                  <span class="daterange-present">Present</span>
+                </p>
+                <div class="job-body">
+                  <header>
+                    <h3>
+                      <a
+                        class="job-company"
+                        href="https://www.torontomu.ca/tedrogersschool/computer-mediated-interpersonal-communication-lab/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >CMIC Lab, TMU</a
+                      >
+                      <span class="job-position"
+                        >Senior Research Assistant (Feb 2026–Present)<br>
+                        Research Assistant (Oct 2025–Feb 2026) · Toronto,
+                        ON</span
+                      >
+                    </h3>
+                  </header>
+                  <ul class="points">
+                    <li>
+                      Collaborating with a multidisciplinary research team to
+                      study the social dynamics of computer-mediated
+                      communication (CMC).
+                    </li>
+                    <li>
+                      Analyzing behavioural and communication data using
+                      statistical tools to identify patterns related to
+                      deception detection and social prediction.
+                    </li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="jobs-container">
+                <span class="job-marker" aria-hidden="true"></span>
+                <p class="daterange">
+                  <time datetime="2024-09">Sep 2024</time>
+                  <span class="daterange-sep" aria-hidden="true">—</span>
+                  <span class="sr-only"> to </span>
+                  <time datetime="2026-04">Apr 2026</time>
+                </p>
+                <div class="job-body">
+                  <header>
+                    <h3>
+                      <a
+                        class="job-company"
+                        href="https://greenwoodleather.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Greenwood Leather</a
+                      >
+                      <span class="job-position"
+                        >Sales &amp; Marketing Manager · Mississauga, ON</span
+                      >
+                    </h3>
+                  </header>
+                  <ul class="points">
+                    <li>
+                      Originated a 40% increase in sales by using creative
+                      social media marketing techniques, which helped the
+                      business become more visible in the marketplace.
+                    </li>
+                    <li>
+                      Maintained and strengthened ties with more than 13 B2B
+                      clients throughout Canada, resulting in steady revenue
+                      growth, good cash flow, and the creation of a distinct
+                      product demand based on local geography.
+                    </li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="jobs-container">
+                <span class="job-marker" aria-hidden="true"></span>
+                <p class="daterange">
+                  <time datetime="2024-04">Apr 2024</time>
+                  <span class="daterange-sep" aria-hidden="true">—</span>
+                  <span class="sr-only"> to </span>
+                  <time datetime="2024-08">Aug 2024</time>
+                </p>
+                <div class="job-body">
+                  <header>
+                    <h3>
+                      <a
+                        class="job-company"
+                        href="https://www.trugreen.ca/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >TruGreen</a
+                      >
+                      <span class="job-position"
+                        >Inside Sales Representative (Jun–Aug 2024)<br>
+                        Sales Representative (Apr–Jun 2024) · Mississauga, ON</span
+                      >
+                    </h3>
+                  </header>
+                  <ul class="points">
+                    <li>
+                      Worked on developing persuasive sales pitches according
+                      to the changing season by addressing customer questions
+                      and objections, resulting in tailored solutions to
+                      customer needs, which led to consistently meeting weekly
+                      sales targets.
+                    </li>
+                    <li>
+                      Rewarded with the best salesperson award for June,
+                      generating over 120% of the weekly sales goal.
+                    </li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="jobs-container">
+                <span class="job-marker" aria-hidden="true"></span>
+                <p class="daterange">
+                  <time datetime="2023-05">May 2023</time>
+                  <span class="daterange-sep" aria-hidden="true">—</span>
+                  <span class="sr-only"> to </span>
+                  <time datetime="2024-02">Feb 2024</time>
+                </p>
+                <div class="job-body">
+                  <header>
+                    <h3>
+                      <a
+                        class="job-company"
+                        href="https://greenwoodleather.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Greenwood Leather</a
+                      >
+                      <span class="job-position"
+                        >Sales Manager · Mississauga, ON</span
+                      >
+                    </h3>
+                  </header>
+                  <ul class="points">
+                    <li>
+                      Performed in-depth market research, which enabled the
+                      company to expand into the USA with success, gaining a
+                      sizeable market share, and strategically positioned the
+                      business.
+                    </li>
+                    <li>
+                      Worked in tandem with shipping and operational partners
+                      to optimize packaging, improving customer happiness and
+                      cutting expenses by 6.2%, all of which helped to
+                      streamline logistics.
+                    </li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="jobs-container">
+                <span class="job-marker" aria-hidden="true"></span>
+                <p class="daterange">
+                  <time datetime="2023-01">Jan 2023</time>
+                  <span class="daterange-sep" aria-hidden="true">—</span>
+                  <span class="sr-only"> to </span>
+                  <time datetime="2023-05">May 2023</time>
+                </p>
+                <div class="job-body">
+                  <header>
+                    <h3>
+                      <span class="job-company">Boron Diamonds</span>
+                      <span class="job-position">Founder · Regina, SK</span>
+                    </h3>
+                  </header>
+                  <ul class="points">
+                    <li>
+                      Dived into my start-up of an online drop shipping store
+                      of imitation jewelry serving over 400 orders with an
+                      average order value of $23 with healthy reviews.
+                    </li>
+                    <li>
+                      Worked closely with affiliate marketers and social media
+                      influencers to drive sales, and increased sales by
+                      targeting potential customers through analytical
+                      performance marketing.
+                    </li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="jobs-container jobs-container--early">
+                <span class="job-marker" aria-hidden="true"></span>
+                <p class="daterange">
+                  <time datetime="2020-01">Jan 2020</time>
+                  <span class="daterange-sep" aria-hidden="true">—</span>
+                  <span class="sr-only"> to </span>
+                  <time datetime="2023-01">Jan 2023</time>
+                </p>
+                <div class="job-body">
+                  <header>
+                    <h3>
+                      <span class="job-company">Bombay Spices</span>
+                      <span class="job-position"
+                        >Assistant Store Manager · Regina, SK</span
+                      >
+                    </h3>
+                  </header>
+                  <ul class="points">
+                    <li>
+                      Implemented strategic marketing techniques that generated
+                      a $2 million increase in net sales, while managing
+                      warehouse operations, inventory, and cross-training new
+                      associates.
+                    </li>
+                    <li>
+                      Improved team efficiency by 15% through optimized
+                      stocking strategies and maintained strict safety
+                      protocols while operating heavy equipment like forklifts
+                      and cherry pickers.
+                    </li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="jobs-container jobs-container--early">
+                <span class="job-marker" aria-hidden="true"></span>
+                <p class="daterange">
+                  <time datetime="2019-09">Sep 2019</time>
+                  <span class="daterange-sep" aria-hidden="true">—</span>
+                  <span class="sr-only"> to </span>
+                  <time datetime="2022-07">Jul 2022</time>
+                </p>
+                <div class="job-body">
+                  <header>
+                    <h3>
+                      <a
+                        class="job-company"
+                        href="https://www.uregina.ca/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >University of Regina</a
+                      >
+                      <span class="job-position">Tutor · Regina, SK</span>
+                    </h3>
+                  </header>
+                  <ul class="points">
+                    <li>
+                      Designed tailored lesson plans, custom practice
+                      assessments, and targeted reading comprehension
+                      strategies to improve student knowledge, boost
+                      self-confidence, and reduce test anxiety.
+                    </li>
+                    <li>
+                      Evaluated individual learning needs and academic progress
+                      while supporting classroom instruction through one-on-one
+                      tutoring, homework preparation, and regular performance
+                      feedback.
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="projects" class="resume-section" aria-labelledby="proj-heading">
+            <div class="section-title">
+              <h2 id="proj-heading">Projects</h2>
+            </div>
+            <div class="project-list">
+              <article class="project">
+                <header>
+                  <h3>
+                    <a
+                      class="job-company"
+                      href="https://github.com/Nitant-Suhagiya/Pagenova"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Pagenova</a
+                    >
+                    <span class="job-position"
+                      >Chrome AI assistant Extension · React, TypeScript,
+                      Vite</span
+                    >
+                  </h3>
+                </header>
+                <ul class="points">
+                  <li>
+                    Built a Chrome extension that grounds streaming AI chat in
+                    open tabs, uploaded documents, and images, supporting local
+                    Ollama and cloud providers (OpenAI, Anthropic, Gemini,
+                    OpenAI-compatible).
+                  </li>
+                  <li>
+                    Designed a budget-aware RAG pipeline (chunk → embed →
+                    retrieve) with on-device Transformers.js embeddings,
+                    IndexedDB vector storage, and automatic full-context vs.
+                    retrieval mode based on model window size.
+                  </li>
+                  <li>
+                    Implemented a React UI over a typed service-worker protocol
+                    with abortable streaming, session-only API keys, SSRF-safe
+                    image fetching, and a 120+ test Vitest suite covering
+                    providers, retrieval, and streaming edge cases.
+                  </li>
+                </ul>
+              </article>
+
+              <article class="project">
+                <header>
+                  <h3>
+                    <a
+                      class="job-company"
+                      href="https://github.com/Nitant-Suhagiya/F1_2025_predictions"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >F1 Winner Predictor</a
+                    >
+                    <span class="job-position"
+                      >Python, scikit-learn, FastF1 API</span
+                    >
+                  </h3>
+                </header>
+                <ul class="points">
+                  <li>
+                    Preprocessed and analyzed free practice session data from
+                    the FastF1 API (driver speed, lap times, conditions) to
+                    build a structured dataset for predictive modelling.
+                  </li>
+                  <li>
+                    Trained an XGBoost model to forecast driver speeds and race
+                    performance for current-season events using last year’s race
+                    data as benchmarks, improving prediction accuracy through
+                    feature engineering.
+                  </li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <section id="research" class="resume-section" aria-labelledby="res-heading">
+            <div class="section-title">
+              <h2 id="res-heading">Research</h2>
+            </div>
+            <div class="project-list">
+              <article class="project">
+                <header>
+                  <h3>
+                    <a
+                      class="job-company"
+                      href="https://github.com/Nitant-Suhagiya/UM-GCN"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >UM-GCN: Multiscale Label-Attention Graph Network for
+                      Chest X-Ray Classification</a
+                    >
+                    <span class="job-position"
+                      >Submitted, SPIE Medical Imaging 2027</span
+                    >
+                  </h3>
+                </header>
+                <ul class="points">
+                  <li>
+                    Designed UM-GCN, a multiscale label-attention graph network
+                    that builds image-specific disease graphs from attention
+                    overlap, replacing fixed co-occurrence statistics with
+                    entropy-modulated message passing.
+                  </li>
+                  <li>
+                    Achieved macro-AUROC of 0.8318 and macro-AP of 0.3226 on
+                    ChestX-ray14, outperforming a tuned EfficientNet-B4 baseline
+                    through controlled ablations, with statistically significant
+                    AUROC gains on 5 disease classes (Atelectasis, Infiltration,
+                    Pneumonia, Edema, Emphysema) confirmed via external
+                    validation on CheXpert.
+                  </li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <section id="education" class="resume-section" aria-labelledby="edu-heading">
+            <div class="section-title">
+              <h2 id="edu-heading">Education</h2>
+            </div>
+            <div class="degree-list">
+              <article class="degree-container">
+                <h3 class="degree">
+                  BSc. Computer Science with Minor in Mathematics
+                </h3>
+                <p class="school">
+                  <a
+                    href="https://www.torontomu.ca/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Toronto Metropolitan University</a
+                  >
+                  · Toronto, ON · Sept 2024 – May 2027
+                </p>
+                <p class="degree-note">Dean’s List 2025</p>
+              </article>
+              <article class="degree-container">
+                <h3 class="degree">Diploma in Computer Science</h3>
+                <p class="school">
+                  <a
+                    href="https://www.uregina.ca/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >University of Regina</a
+                  >
+                  · Regina, SK · May 2019 – June 2021
+                </p>
+                <p class="degree-note">GPA 7.4/9</p>
+              </article>
+            </div>
+          </section>
+
+          <section
+            id="certificates"
+            class="resume-section"
+            aria-labelledby="cert-heading"
+          >
+            <div class="section-title">
+              <h2 id="cert-heading">Certificates</h2>
+            </div>
+            <div class="degree-list">
+              <article class="degree-container">
+                <h3 class="degree">TCPS 2: CORE-2022</h3>
+                <p class="school">Government of Canada · Oct 2025</p>
+              </article>
+              <article class="degree-container">
+                <h3 class="degree">C &amp; C++</h3>
+                <p class="school">
+                  Red &amp; White Skill Education Official · Nov 2018
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <section id="skills" class="resume-section" aria-labelledby="skills-heading">
+            <div class="section-title">
+              <h2 id="skills-heading">Skills</h2>
+            </div>
+            <div class="skills-groups">
+              <div class="skills-group">
+                <h3 class="skills-group-title">Languages</h3>
+                <ul class="skill-tags">
+                  <li>Python</li>
+                  <li>Java</li>
+                  <li>JavaScript</li>
+                  <li>TypeScript</li>
+                  <li>C/C++</li>
+                  <li>SQL</li>
+                  <li>PHP</li>
+                  <li>HTML/CSS</li>
+                </ul>
+              </div>
+              <div class="skills-group">
+                <h3 class="skills-group-title">Frameworks &amp; Libraries</h3>
+                <ul class="skill-tags">
+                  <li>React</li>
+                  <li>Node.js</li>
+                  <li>Express</li>
+                  <li>Tailwind</li>
+                  <li>FastAPI</li>
+                  <li>Scikit-Learn</li>
+                  <li>XGBoost</li>
+                  <li>TensorFlow</li>
+                  <li>Keras</li>
+                  <li>PyTorch</li>
+                  <li>Pandas</li>
+                  <li>NumPy</li>
+                  <li>Matplotlib</li>
+                  <li>ONNX</li>
+                  <li>Transformers</li>
+                  <li>MCP</li>
+                  <li>RAG</li>
+                  <li>JAX</li>
+                  <li>NLP</li>
+                  <li>Computer Vision</li>
+                  <li>LLM</li>
+                </ul>
+              </div>
+              <div class="skills-group">
+                <h3 class="skills-group-title">Developer Tools</h3>
+                <ul class="skill-tags">
+                  <li>Git</li>
+                  <li>GitHub</li>
+                  <li>VS Code</li>
+                  <li>Linux/UNIX</li>
+                  <li>AWS</li>
+                  <li>Power BI</li>
+                  <li>Hugging Face</li>
+                  <li>Flask</li>
+                  <li>Docker</li>
+                  <li>Jupyter</li>
+                  <li>LangChain</li>
+                  <li>LangGraph</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="site-footer-new">
+        <div class="footer-content">
+          <div class="footer-identity">
+            <a class="footer-avatar" href="#top" aria-label="Back to top">
+              <img src="Profile.jpg" alt="" width="80" height="80" />
+            </a>
+            <div class="footer-info">
+              <span class="footer-name">Nitant Suhagiya</span>
+              <p class="footer-role">
+                Computer Science student · AI/ML
+              </p>
+              <p class="footer-copyright">
+                © <span id="year"></span> ·
+                <a
+                  href="https://github.com/Nitant-Suhagiya"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Source<span class="sr-only"> (opens in new tab)</span></a
+                >
+              </p>
+            </div>
+          </div>
+
+          <div class="footer-right">
+            <nav class="footer-links" aria-labelledby="footer-links-heading">
+              <span id="footer-links-heading" class="footer-links-label"
+                >Explore</span
+              >
+              <div class="footer-links-grid">
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#research">Research</a>
+                <a href="#education">Education</a>
+                <a href="#certificates">Certificates</a>
+                <a href="#skills">Skills</a>
+                <a href="contact.html">Contact</a>
+              </div>
+            </nav>
+
+            <div class="footer-social" aria-labelledby="footer-social-heading">
+              <span id="footer-social-heading" class="footer-social-label"
+                >Connect</span
+              >
+              <!-- Connect: GitHub, LinkedIn, X, site, email -->
+              <ul class="icons">
+                <li>
+                  <a
+                    href="https://github.com/Nitant-Suhagiya"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                    title="GitHub"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18">
+                      <path
+                        fill="currentColor"
+                        d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.48 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.27 2.75 1.05A9.36 9.36 0 0 1 12 6.84c.85.01 1.71.12 2.51.35 1.91-1.32 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .26.18.58.69.48A10.04 10.04 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/nitant-suhagiya/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    title="LinkedIn"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18">
+                      <path
+                        fill="currentColor"
+                        d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22 2H2v20h20V2z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://x.com/SuhagiyaN"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="X"
+                    title="X"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18">
+                      <path
+                        fill="currentColor"
+                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.717-8.835L1.254 2.25H8.08l4.251 5.699L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://nitantsuhagiya.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Website"
+                    title="Website"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18">
+                      <path
+                        fill="currentColor"
+                        d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm7.93 9h-3.17a15.4 15.4 0 0 0-1.2-5.02A8.03 8.03 0 0 1 19.93 11zM12 4c.9 0 2.23 1.84 2.9 5H9.1C9.77 5.84 11.1 4 12 4zM4.07 13h3.17c.2 1.8.7 3.5 1.2 5.02A8.03 8.03 0 0 1 4.07 13zm3.17-2H4.07a8.03 8.03 0 0 1 4.37-5.02A15.4 15.4 0 0 0 7.24 11zM12 20c-.9 0-2.23-1.84-2.9-5h5.8c-.67 3.16-2 5-2.9 5zm2.56-2a15.4 15.4 0 0 0 1.2-5h3.17a8.03 8.03 0 0 1-4.37 5zM14.9 11H9.1a13.7 13.7 0 0 1 0-2h5.8a13.7 13.7 0 0 1 0 2z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="mailto:nitant187@gmail.com"
+                    aria-label="Email"
+                    title="Email"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18">
+                      <path
+                        fill="currentColor"
+                        d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
